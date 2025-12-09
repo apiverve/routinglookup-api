@@ -1,0 +1,75 @@
+openapi: 3.0.4
+info:
+  title: Routing Number Lookup
+  description: Routing Number Lookup is a simple tool for looking up routing number information for USA Banks. It returns information such as the bank, location, and more based on the routing number provided.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/routinglookup:
+    get:
+      summary: Lookup Routing Number Information
+      description: Routing Number Lookup is a simple tool for looking up routing number information for USA Banks. It returns information such as the bank, location, and more based on the routing number provided.
+      operationId: routinglookup
+      parameters:
+      - name: routing
+        in: query
+        schema:
+          type: string
+        required: true
+        description: The routing number to lookup information about
+        example: '121000358'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  routing_number: '121000358'
+                  office_code: O
+                  record_type_code: '1'
+                  new_routing_number: '000000000'
+                  bank: BANK OF AMERICA, N.A.
+                  address: 8001 VILLA PARK DRIVE
+                  city: HENRICO
+                  state: VA
+                  zip: '23228'
+                  zip_extension: '0000'
+                  country: US
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
