@@ -1,32 +1,35 @@
 openapi: 3.0.4
 info:
   title: Routing Number Lookup
-  description: Routing Number Lookup is a simple tool for looking up routing number information for USA Banks. It returns information such as the bank, location, and more based on the routing number provided.
+  description: >-
+    Routing Number Lookup is a simple tool for looking up routing number
+    information for USA Banks. It returns information such as the bank,
+    location, and more based on the routing number provided.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/routinglookup:
     get:
       summary: Lookup Routing Number Information
-      description: Routing Number Lookup is a simple tool for looking up routing number information for USA Banks. It returns information such as the bank, location, and more based on the routing number provided.
+      description: Lookup routing number information based on the routing number
       operationId: routinglookup
       parameters:
-      - name: routing
-        in: query
-        schema:
-          type: string
-        required: true
-        description: The routing number to lookup information about
-        example: '121000358'
+        - name: routing
+          in: query
+          schema:
+            type: string
+          required: true
+          description: The routing number to lookup information about
+          example: '121000358'
       responses:
         '200':
           description: Successful Response
@@ -42,11 +45,11 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   routing_number: '121000358'
                   office_code: O
@@ -64,7 +67,7 @@ paths:
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -72,4 +75,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
