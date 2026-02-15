@@ -30,14 +30,12 @@ namespace APIVerve.API.RoutingNumberLookup
     public partial class Data
     {
         [JsonProperty("routing_number")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long RoutingNumber { get; set; }
 
         [JsonProperty("office_code")]
         public string OfficeCode { get; set; }
 
         [JsonProperty("record_type_code")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long RecordTypeCode { get; set; }
 
         [JsonProperty("new_routing_number")]
@@ -56,7 +54,6 @@ namespace APIVerve.API.RoutingNumberLookup
         public string State { get; set; }
 
         [JsonProperty("zip")]
-        [JsonConverter(typeof(ParseStringConverter))]
         public long Zip { get; set; }
 
         [JsonProperty("zip_extension")]
