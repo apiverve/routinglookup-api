@@ -12,7 +12,6 @@ namespace APIVerve.API.RoutingNumberLookup
     {
         /// <summary>
         /// The routing number to lookup information about
-        /// Example: 121000358
         /// </summary>
         [JsonProperty("routing")]
         public string Routing { get; set; }
