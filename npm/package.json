@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/routinglookup",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Routing Number Lookup is a simple tool for looking up routing number information for USA Banks. It returns information such as the bank, location, and more based on the routing number provided.",
   "main": "index.js",
   "types": "index.d.ts",
