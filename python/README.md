@@ -226,8 +226,9 @@ from apiverve_routingnumberlookup.apiClient import RoutinglookupAPIClient
 
 api = RoutinglookupAPIClient("[YOUR_API_KEY]")
 
+query = { "routing": "121000358" }
+
 try:
-    query = { "routing": "121000358" }
     result = api.execute(query)
     print(result)
 finally:
