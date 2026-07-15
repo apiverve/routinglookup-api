@@ -1,13 +1,13 @@
-# [Routing Number Lookup API](https://apiverve.com/marketplace/routinglookup?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Routing Number Lookup API](https://routinglookup.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 
 Routing Number Lookup is a simple tool for looking up routing number information for USA Banks. It returns information such as the bank, location, and more based on the routing number provided.
 
 The Routing Number Lookup API provides a simple, reliable way to integrate routing number lookup functionality into your applications. Built for developers who need production-ready routing number lookup capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/routinglookup?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://routinglookup.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/routinglookup?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://routinglookup.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -30,7 +30,11 @@ The Routing Number Lookup API provides a simple, reliable way to integrate routi
 ```javascript
 async function callRoutingNumberLookupAPI() {
     try {
-        const response = await fetch('https://api.apiverve.com/v1/routinglookup', {
+        const params = new URLSearchParams({
+            routing: '121000358'
+        });
+
+        const response = await fetch(`https://api.apiverve.com/v1/routinglookup?${params}`, {
             method: 'GET',
             headers: {
                 'x-api-key': 'YOUR_API_KEY_HERE'
@@ -50,7 +54,7 @@ callRoutingNumberLookupAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/routinglookup?param=value" \
+curl -X GET "https://api.apiverve.com/v1/routinglookup?routing=121000358" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -150,14 +154,14 @@ go get github.com/apiverve/routinglookup-api/go
 |---------|---------|
 | **Multi-language SDKs** | Native packages for JavaScript, Python, C#, Go, and Android |
 | **Simple Integration** | Single API key authentication, consistent response format |
-| **Production Ready** | 99.9% uptime, fast response times, used by thousands of developers |
+| **Production Ready** | 99.9% uptime SLA, served from 24 global regions |
 | **Comprehensive Docs** | Full examples, OpenAPI spec, and dedicated support |
 
 ---
 
 ## Documentation
 
-- 🏠 **API Home:** [Routing Number Lookup API](https://apiverve.com/marketplace/routinglookup?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Routing Number Lookup API](https://routinglookup.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/routinglookup](https://docs.apiverve.com/ref/routinglookup)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -169,7 +173,7 @@ go get github.com/apiverve/routinglookup-api/go
 The Routing Number Lookup API is commonly used for:
 
 - **Web Applications** - Add routing number lookup features to your frontend or backend
-- **Mobile Apps** - Native SDKs for iOS and Android development
+- **Mobile Apps** - Native SDKs for Android development
 - **Automation** - Integrate with n8n, Zapier, or custom workflows
 - **SaaS Products** - Enhance your product with routing number lookup capabilities
 - **Data Pipelines** - Process and analyze data at scale
@@ -199,7 +203,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Routing Number Lookup API](https://apiverve.com/marketplace/routinglookup?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Routing Number Lookup API](https://routinglookup.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
