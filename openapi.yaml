@@ -62,6 +62,15 @@ paths:
                   zip: '23228'
                   zip_extension: '0000'
                   country: US
+                  federal_reserve_district: San Francisco
+                  routing_type: primary
+                  is_valid_checksum: true
+                  routing_analysis:
+                    is_head_office: true
+                    is_branch: false
+                    is_federal_reserve_bank: false
+                    is_active: true
+                    replaced_by: null
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
