@@ -7,7 +7,7 @@ Routing Number Lookup is a simple tool for looking up routing number information
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 [![npm version](https://img.shields.io/npm/v/@apiverve/routinglookup.svg)](https://www.npmjs.com/package/@apiverve/routinglookup)
 
-This is a Javascript Wrapper for the [Routing Number Lookup API](https://apiverve.com/marketplace/routinglookup?utm_source=npm&utm_medium=readme)
+This is a Javascript Wrapper for the [Routing Number Lookup API](https://routinglookup.apiverve.com?utm_source=npm&utm_medium=readme)
 
 ---
 
@@ -132,7 +132,17 @@ async function makeRequest() {
     "state": "VA",
     "zip": "23228",
     "zip_extension": "0000",
-    "country": "US"
+    "country": "US",
+    "federal_reserve_district": "San Francisco",
+    "routing_type": "primary",
+    "is_valid_checksum": true,
+    "routing_analysis": {
+      "is_head_office": true,
+      "is_branch": false,
+      "is_federal_reserve_bank": false,
+      "is_active": true,
+      "replaced_by": null
+    }
   }
 }
 ```
