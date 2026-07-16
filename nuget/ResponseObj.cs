@@ -25,18 +25,21 @@ namespace APIVerve.API.RoutingNumberLookup
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("routing_number")]
-        public long RoutingNumber { get; set; }
+        public long? RoutingNumber { get; set; }
 
         [JsonProperty("office_code")]
         public string OfficeCode { get; set; }
 
         [JsonProperty("record_type_code")]
-        public long RecordTypeCode { get; set; }
+        public long? RecordTypeCode { get; set; }
 
         [JsonProperty("new_routing_number")]
         public string NewRoutingNumber { get; set; }
@@ -54,12 +57,54 @@ namespace APIVerve.API.RoutingNumberLookup
         public string State { get; set; }
 
         [JsonProperty("zip")]
-        public long Zip { get; set; }
+        public long? Zip { get; set; }
 
         [JsonProperty("zip_extension")]
         public string ZipExtension { get; set; }
 
         [JsonProperty("country")]
         public string Country { get; set; }
+
+        [JsonProperty("federal_reserve_district")]
+        public string FederalReserveDistrict { get; set; }
+
+        [JsonProperty("routing_type")]
+        public string RoutingType { get; set; }
+
+        [JsonProperty("is_valid_checksum")]
+        public bool? IsValidChecksum { get; set; }
+
+        [JsonProperty("routing_analysis")]
+        public RoutingAnalysis RoutingAnalysis { get; set; }
+    }
+
+    public partial class RoutingAnalysis
+    {
+        [JsonProperty("is_head_office")]
+        public bool? IsHeadOffice { get; set; }
+
+        [JsonProperty("is_branch")]
+        public bool? IsBranch { get; set; }
+
+        [JsonProperty("is_federal_reserve_bank")]
+        public bool? IsFederalReserveBank { get; set; }
+
+        [JsonProperty("is_active")]
+        public bool? IsActive { get; set; }
+
+        [JsonProperty("replaced_by")]
+        public object ReplacedBy { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
