@@ -7,7 +7,7 @@ Routing Number Lookup is a simple tool for looking up routing number information
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a .NET Wrapper for the [RoutingNumberLookup API](https://apiverve.com/marketplace/routinglookup?utm_source=nuget&utm_medium=readme)
+This is a .NET Wrapper for the [RoutingNumberLookup API](https://routinglookup.apiverve.com?utm_source=nuget&utm_medium=readme)
 
 ---
 
@@ -51,7 +51,7 @@ Here's a simple example to get you started quickly:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.RoutingNumberLookup;
 
 class Program
 {
@@ -60,8 +60,8 @@ class Program
         // Initialize the API client
         var apiClient = new RoutingNumberLookupAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    routing = "121000358"
+        var queryOptions = new RoutingNumberLookupQueryOptions {
+    Routing = "121000358"
 };
 
         // Make the API call
@@ -116,7 +116,7 @@ The modern async/await pattern provides the best performance and code readabilit
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.RoutingNumberLookup;
 
 public class Example
 {
@@ -124,8 +124,8 @@ public class Example
     {
         var apiClient = new RoutingNumberLookupAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    routing = "121000358"
+        var queryOptions = new RoutingNumberLookupQueryOptions {
+    Routing = "121000358"
 };
 
         var response = await apiClient.ExecuteAsync(queryOptions);
@@ -148,7 +148,7 @@ If you need to use synchronous code, you can use the `Execute` method:
 
 ```csharp
 using System;
-using APIVerve;
+using APIVerve.API.RoutingNumberLookup;
 
 public class Example
 {
@@ -156,8 +156,8 @@ public class Example
     {
         var apiClient = new RoutingNumberLookupAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    routing = "121000358"
+        var queryOptions = new RoutingNumberLookupQueryOptions {
+    Routing = "121000358"
 };
 
         var response = apiClient.Execute(queryOptions);
@@ -185,7 +185,7 @@ The API client provides comprehensive error handling. Here are some examples:
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.RoutingNumberLookup;
 
 public class Example
 {
@@ -193,8 +193,8 @@ public class Example
     {
         var apiClient = new RoutingNumberLookupAPIClient("[YOUR_API_KEY]");
 
-        var queryOptions = new QueryOptions {
-    routing = "121000358"
+        var queryOptions = new RoutingNumberLookupQueryOptions {
+    Routing = "121000358"
 };
 
         try
@@ -237,7 +237,7 @@ public class Example
 ```csharp
 using System;
 using System.Threading.Tasks;
-using APIVerve;
+using APIVerve.API.RoutingNumberLookup;
 
 public class Example
 {
@@ -249,8 +249,8 @@ public class Example
         apiClient.SetMaxRetries(3);        // Retry up to 3 times (default: 0, max: 3)
         apiClient.SetRetryDelay(2000);     // Wait 2 seconds between retries
 
-        var queryOptions = new QueryOptions {
-    routing = "121000358"
+        var queryOptions = new RoutingNumberLookupQueryOptions {
+    Routing = "121000358"
 };
 
         try
@@ -290,8 +290,8 @@ var apiClient = new RoutingNumberLookupAPIClient("[YOUR_API_KEY]");
 apiClient.AddCustomHeader("X-Custom-Header", "custom-value");
 apiClient.AddCustomHeader("X-Request-ID", Guid.NewGuid().ToString());
 
-var queryOptions = new QueryOptions {
-    routing = "121000358"
+var queryOptions = new RoutingNumberLookupQueryOptions {
+    Routing = "121000358"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -316,8 +316,8 @@ apiClient.SetLogger(message =>
     Console.WriteLine($"[LOG] {DateTime.Now:yyyy-MM-dd HH:mm:ss} - {message}");
 });
 
-var queryOptions = new QueryOptions {
-    routing = "121000358"
+var queryOptions = new RoutingNumberLookupQueryOptions {
+    Routing = "121000358"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -334,8 +334,8 @@ var apiClient = new RoutingNumberLookupAPIClient("[YOUR_API_KEY]");
 apiClient.SetMaxRetries(3);           // Retry up to 3 times (default: 0, max: 3)
 apiClient.SetRetryDelay(1500);        // Wait 1.5 seconds between retries (default: 1000ms)
 
-var queryOptions = new QueryOptions {
-    routing = "121000358"
+var queryOptions = new RoutingNumberLookupQueryOptions {
+    Routing = "121000358"
 };
 
 var response = await apiClient.ExecuteAsync(queryOptions);
@@ -346,8 +346,8 @@ var response = await apiClient.ExecuteAsync(queryOptions);
 The API client implements `IDisposable` for proper resource cleanup:
 
 ```csharp
-var queryOptions = new QueryOptions {
-    routing = "121000358"
+var queryOptions = new RoutingNumberLookupQueryOptions {
+    Routing = "121000358"
 };
 
 using (var apiClient = new RoutingNumberLookupAPIClient("[YOUR_API_KEY]"))
@@ -377,7 +377,17 @@ using (var apiClient = new RoutingNumberLookupAPIClient("[YOUR_API_KEY]"))
     "state": "VA",
     "zip": "23228",
     "zip_extension": "0000",
-    "country": "US"
+    "country": "US",
+    "federal_reserve_district": "San Francisco",
+    "routing_type": "primary",
+    "is_valid_checksum": true,
+    "routing_analysis": {
+      "is_head_office": true,
+      "is_branch": false,
+      "is_federal_reserve_bank": false,
+      "is_active": true,
+      "replaced_by": null
+    }
   }
 }
 ```
