@@ -37,6 +37,9 @@ declare module '@apiverve/routinglookup' {
       zipExtension:           null | string;
       country:                null | string;
       federalReserveDistrict: null | string;
+      federalReserveStates:   (null | string)[];
+      addressInDistrict:      boolean | null;
+      statesServed:           (null | string)[];
       routingType:            null | string;
       isValidChecksum:        boolean | null;
       routingAnalysis:        RoutingAnalysis;

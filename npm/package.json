@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/routinglookup",
-  "version": "1.2.0",
-  "description": "Routing Number Lookup is a simple tool for looking up routing number information for USA Banks. It returns information such as the bank, location, and more based on the routing number provided.",
+  "version": "1.2.2",
+  "description": "Routing Number Lookup is a bank routing number lookup API that verifies US ABA routing numbers to confirm bank names, states, and checksum validity. It identifies the routing type and Federal Reserve district, while paid plans add full street addresses, branch details, and replacement numbers.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "routing number lookup", "routing number lookup api", "routing number lookup tool", "routing number lookup software", "routing number lookup service"
+    "routing number lookup api", "bank routing number lookup api", "routing number validation api", "routing number api", "bank routing number api"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/routinglookup-api/issues"
   },
-  "homepage": "https://routinglookup.apiverve.com?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/routinglookup?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
