@@ -68,6 +68,15 @@ namespace APIVerve.API.RoutingNumberLookup
         [JsonProperty("federal_reserve_district")]
         public string FederalReserveDistrict { get; set; }
 
+        [JsonProperty("federal_reserve_states")]
+        public string[] FederalReserveStates { get; set; }
+
+        [JsonProperty("address_in_district")]
+        public bool? AddressInDistrict { get; set; }
+
+        [JsonProperty("states_served")]
+        public string[] StatesServed { get; set; }
+
         [JsonProperty("routing_type")]
         public string RoutingType { get; set; }
 
