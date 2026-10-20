@@ -1,13 +1,12 @@
 Routing Number Lookup API
 ============
 
-Routing Number Lookup is a simple tool for looking up routing number information for USA Banks. It returns information such as the bank, location, and more based on the routing number provided.
+Routing Number Lookup is a bank routing number lookup API that verifies US ABA routing numbers to confirm bank names, states, and checksum validity. It identifies the routing type and Federal Reserve district, while paid plans add full street addresses, branch details, and replacement numbers.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Routing Number Lookup API](https://apiverve.com/marketplace/routinglookup?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-routingnumberlookup.svg)](https://pypi.org/project/apiverve-routingnumberlookup/)
+
+This is a Python wrapper for the [Routing Number Lookup API](https://apiverve.com/marketplace/routinglookup?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-routingnumberlookup
 
 ## Configuration
 
-Before using the routinglookup API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Routing Number Lookup API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -60,7 +59,7 @@ except Exception as e:
 
 ## Usage
 
-The Routing Number Lookup API documentation is found here: [https://docs.apiverve.com/ref/routinglookup](https://docs.apiverve.com/ref/routinglookup?utm_source=pypi&utm_medium=readme).
+The Routing Number Lookup API documentation is found here: [https://docs.apiverve.com/ref/routinglookup](https://docs.apiverve.com/ref/routinglookup?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -112,7 +111,35 @@ print(result)
     "state": "VA",
     "zip": "23228",
     "zip_extension": "0000",
-    "country": "US"
+    "country": "US",
+    "federal_reserve_district": "San Francisco",
+    "federal_reserve_states": [
+      "AK",
+      "AS",
+      "AZ",
+      "CA",
+      "GU",
+      "HI",
+      "ID",
+      "MP",
+      "NV",
+      "OR",
+      "UT",
+      "WA"
+    ],
+    "address_in_district": false,
+    "states_served": [
+      "CA"
+    ],
+    "routing_type": "primary",
+    "is_valid_checksum": true,
+    "routing_analysis": {
+      "is_head_office": true,
+      "is_branch": false,
+      "is_federal_reserve_bank": false,
+      "is_active": true,
+      "replaced_by": null
+    }
   }
 }
 ```
@@ -240,7 +267,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -251,12 +278,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
