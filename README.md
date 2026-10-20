@@ -1,13 +1,13 @@
-# [Routing Number Lookup API](https://routinglookup.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Routing Number Lookup API](https://apiverve.com/marketplace/routinglookup?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Routing Number Lookup is a simple tool for looking up routing number information for USA Banks. It returns information such as the bank, location, and more based on the routing number provided.
+Routing Number Lookup is a bank routing number lookup API that verifies US ABA routing numbers to confirm bank names, states, and checksum validity. It identifies the routing type and Federal Reserve district, while paid plans add full street addresses, branch details, and replacement numbers.
 
 The Routing Number Lookup API provides a simple, reliable way to integrate routing number lookup functionality into your applications. Built for developers who need production-ready routing number lookup capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://routinglookup.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/routinglookup?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://routinglookup.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/routinglookup?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -161,7 +161,7 @@ go get github.com/apiverve/routinglookup-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Routing Number Lookup API](https://routinglookup.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Routing Number Lookup API](https://apiverve.com/marketplace/routinglookup?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/routinglookup](https://docs.apiverve.com/ref/routinglookup)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -191,11 +191,66 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Routing Number Lookup API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "routing_number": "121000358",
+    "office_code": "O",
+    "record_type_code": "1",
+    "new_routing_number": "000000000",
+    "bank": "BANK OF AMERICA, N.A.",
+    "address": "8001 VILLA PARK DRIVE",
+    "city": "HENRICO",
+    "state": "VA",
+    "zip": "23228",
+    "zip_extension": "0000",
+    "country": "US",
+    "federal_reserve_district": "San Francisco",
+    "federal_reserve_states": [
+      "AK",
+      "AS",
+      "AZ",
+      "CA",
+      "GU",
+      "HI",
+      "ID",
+      "MP",
+      "NV",
+      "OR",
+      "UT",
+      "WA"
+    ],
+    "address_in_district": false,
+    "states_served": [
+      "CA"
+    ],
+    "routing_type": "primary",
+    "is_valid_checksum": true,
+    "routing_analysis": {
+      "is_head_office": true,
+      "is_branch": false,
+      "is_federal_reserve_bank": false,
+      "is_active": true,
+      "replaced_by": null
+    }
+  }
 }
 ```
 
@@ -203,7 +258,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Routing Number Lookup API](https://routinglookup.apiverve.com?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Routing Number Lookup API](https://apiverve.com/marketplace/routinglookup?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

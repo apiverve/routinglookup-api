@@ -2,9 +2,10 @@ openapi: 3.0.4
 info:
   title: Routing Number Lookup
   description: >-
-    Routing Number Lookup is a simple tool for looking up routing number
-    information for USA Banks. It returns information such as the bank,
-    location, and more based on the routing number provided.
+    Routing Number Lookup is a bank routing number lookup API that verifies US
+    ABA routing numbers to confirm bank names, states, and checksum validity. It
+    identifies the routing type and Federal Reserve district, while paid plans
+    add full street addresses, branch details, and replacement numbers.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +20,7 @@ servers:
 paths:
   /v1/routinglookup:
     get:
-      summary: Lookup Routing Number Information
+      summary: Routing Number Lookup
       description: Lookup routing number information based on the routing number
       operationId: routinglookup
       parameters:
@@ -63,6 +64,22 @@ paths:
                   zip_extension: '0000'
                   country: US
                   federal_reserve_district: San Francisco
+                  federal_reserve_states:
+                    - AK
+                    - AS
+                    - AZ
+                    - CA
+                    - GU
+                    - HI
+                    - ID
+                    - MP
+                    - NV
+                    - OR
+                    - UT
+                    - WA
+                  address_in_district: false
+                  states_served:
+                    - CA
                   routing_type: primary
                   is_valid_checksum: true
                   routing_analysis:
