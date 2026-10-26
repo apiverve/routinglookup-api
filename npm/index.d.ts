@@ -25,24 +25,25 @@ declare module '@apiverve/routinglookup' {
 
 
   interface RoutingNumberLookupData {
-      routingNumber:          null | string;
-      officeCode:             null | string;
-      recordTypeCode:         null | string;
-      newRoutingNumber:       null | string;
-      bank:                   null | string;
-      address:                null | string;
-      city:                   null | string;
-      state:                  null | string;
-      zip:                    null | string;
-      zipExtension:           null | string;
-      country:                null | string;
-      federalReserveDistrict: null | string;
-      federalReserveStates:   (null | string)[];
-      addressInDistrict:      boolean | null;
-      statesServed:           (null | string)[];
-      routingType:            null | string;
-      isValidChecksum:        boolean | null;
-      routingAnalysis:        RoutingAnalysis;
+      routingNumber:                null | string;
+      officeCode:                   null | string;
+      recordTypeCode:               null | string;
+      newRoutingNumber:             null | string;
+      bank:                         null | string;
+      address:                      null | string;
+      city:                         null | string;
+      state:                        null | string;
+      zip:                          null | string;
+      zipExtension:                 null | string;
+      country:                      null | string;
+      federalReserveDistrict:       null | string;
+      federalReserveDistrictNumber: number | null;
+      federalReserveStates:         (null | string)[];
+      addressInDistrict:            boolean | null;
+      statesServed:                 (null | string)[];
+      routingType:                  null | string;
+      isValidChecksum:              boolean | null;
+      routingAnalysis:              RoutingAnalysis;
   }
   
   interface RoutingAnalysis {
