@@ -1,6 +1,6 @@
 # Routing Number Lookup API - Ruby Gem
 
-Routing Number Lookup is a bank routing number lookup API that verifies US ABA routing numbers to confirm bank names, states, and checksum validity. It identifies the routing type and Federal Reserve district, while paid plans add full street addresses, branch details, and replacement numbers.
+Routing Number Lookup is a bank routing number lookup and validation API for US ABA numbers. It checks the check digit, finds the bank name and state, and identifies the routing type and Federal Reserve district, while paid plans add full street addresses, branch details, and replacement numbers.
 
 ## Installation
 
@@ -85,6 +85,7 @@ client = APIVerve::Routinglookup::Client.new(
     "zip_extension": "0000",
     "country": "US",
     "federal_reserve_district": "San Francisco",
+    "federal_reserve_district_number": 12,
     "federal_reserve_states": [
       "AK",
       "AS",
@@ -103,6 +104,9 @@ client = APIVerve::Routinglookup::Client.new(
     "states_served": [
       "CA"
     ],
+    "latitude": 37.621745,
+    "longitude": -77.48896,
+    "timezone": "America/New_York",
     "routing_type": "primary",
     "is_valid_checksum": true,
     "routing_analysis": {

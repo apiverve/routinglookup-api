@@ -4,6 +4,6 @@ require_relative "apiverve_routinglookup/client"
 
 module APIVerve
   module Routinglookup
-    VERSION = "1.2.2"
+    VERSION = "1.2.4"
   end
 end
