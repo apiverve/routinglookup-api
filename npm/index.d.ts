@@ -41,6 +41,9 @@ declare module '@apiverve/routinglookup' {
       federalReserveStates:         (null | string)[];
       addressInDistrict:            boolean | null;
       statesServed:                 (null | string)[];
+      latitude:                     number | null;
+      longitude:                    number | null;
+      timezone:                     null | string;
       routingType:                  null | string;
       isValidChecksum:              boolean | null;
       routingAnalysis:              RoutingAnalysis;
