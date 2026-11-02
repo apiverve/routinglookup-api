@@ -80,6 +80,15 @@ namespace APIVerve.API.RoutingNumberLookup
         [JsonProperty("states_served")]
         public string[] StatesServed { get; set; }
 
+        [JsonProperty("latitude")]
+        public double? Latitude { get; set; }
+
+        [JsonProperty("longitude")]
+        public double? Longitude { get; set; }
+
+        [JsonProperty("timezone")]
+        public string Timezone { get; set; }
+
         [JsonProperty("routing_type")]
         public string RoutingType { get; set; }
 
