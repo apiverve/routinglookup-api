@@ -132,6 +132,9 @@ print(result)
     "states_served": [
       "CA"
     ],
+    "latitude": 37.621745,
+    "longitude": -77.48896,
+    "timezone": "America/New_York",
     "routing_type": "primary",
     "is_valid_checksum": true,
     "routing_analysis": {
