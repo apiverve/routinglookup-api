@@ -1,7 +1,7 @@
 Routing Number Lookup API
 ============
 
-Routing Number Lookup is a bank routing number lookup and validation API for US ABA numbers. It checks the check digit, finds the bank name and state, and identifies the routing type and Federal Reserve district, while paid plans add full street addresses, branch details, and replacement numbers.
+Routing Number Lookup is a bank routing number lookup and validation API for US ABA numbers. It checks the check digit, finds the bank name and state, identifies the routing type and Federal Reserve district, and says whether the number takes FedACH payments and Fedwire transfers, while paid plans add full street addresses, branch details, Fedwire and ACH directory details, and replacement numbers.
 
 
 [![PyPI version](https://img.shields.io/pypi/v/apiverve-routingnumberlookup.svg)](https://pypi.org/project/apiverve-routingnumberlookup/)

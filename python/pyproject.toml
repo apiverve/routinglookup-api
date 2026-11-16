@@ -1,10 +1,10 @@
 [project]
 name = "apiverve-routingnumberlookup"
-version = "1.2.5"
+version = "1.2.6"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
-description = "Routing Number Lookup is a bank routing number lookup and validation API for US ABA numbers. It checks the check digit, finds the bank name and state, and identifies the routing type and Federal Reserve district, while paid plans add full street addresses, branch details, and replacement numbers."
+description = "Routing Number Lookup is a bank routing number lookup and validation API for US ABA numbers. It checks the check digit, finds the bank name and state, identifies the routing type and Federal Reserve district, and says whether the number takes FedACH payments and Fedwire transfers, while paid plans add full street addresses, branch details, Fedwire and ACH directory details, and replacement numbers."
 keywords = ["routing number lookup api", "bank routing number lookup api", "routing number validation api", "routing number api", "bank routing number api"]
 readme = "README.md"
 requires-python = ">=3.9"
