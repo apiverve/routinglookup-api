@@ -2,12 +2,12 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "apiverve_routinglookup"
-  spec.version       = "1.2.5"
+  spec.version       = "1.2.6"
   spec.authors       = ["APIVerve"]
   spec.email         = ["hello@apiverve.com"]
 
   spec.summary       = "Routing Number Lookup API - Ruby Client"
-  spec.description   = "Routing Number Lookup is a bank routing number lookup and validation API for US ABA numbers. It checks the check digit, finds the bank name and state, and identifies the routing type and Federal Reserve district, while paid plans add full street addresses, branch details, and replacement numbers."
+  spec.description   = "Routing Number Lookup is a bank routing number lookup and validation API for US ABA numbers. It checks the check digit, finds the bank name and state, identifies the routing type and Federal Reserve district, and says whether the number takes FedACH payments and Fedwire transfers, while paid plans add full street addresses, branch details, Fedwire and ACH directory details, and replacement numbers."
   spec.homepage      = "https://apiverve.com/marketplace/routinglookup?utm_source=ruby&utm_medium=referral&utm_content=homepage"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.7.0"
